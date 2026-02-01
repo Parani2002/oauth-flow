@@ -2,11 +2,11 @@ require('dotenv').config();
 const axios = require('axios');
 const querystring = require('querystring');
 
-class OrangeHRMOAuth {
+class HRMOAuth {
   constructor() {
-    this.baseURL = process.env.ORANGEHRM_BASE_URL;
-    this.clientId = process.env.ORANGEHRM_CLIENT_ID;
-    this.clientSecret = process.env.ORANGEHRM_CLIENT_SECRET;
+    this.baseURL = process.env.HRM_BASE_URL;
+    this.clientId = process.env.HRM_CLIENT_ID;
+    this.clientSecret = process.env.HRM_CLIENT_SECRET;
     this.redirectUri = process.env.REDIRECT_URI;
   }
 
@@ -116,4 +116,4 @@ class OrangeHRMOAuth {
   }
 }
 
-module.exports = OrangeHRMOAuth;
+module.exports = HRMOAuth;

@@ -1,6 +1,6 @@
-# OrangeHRM OAuth Flow Testing
+# HRM OAuth Flow Testing
 
-A Node.js project for testing the OrangeHRM OAuth 2.0 flow including authorization URL generation and access token exchange.
+A Node.js project for testing the HRM OAuth 2.0 flow including authorization URL generation and access token exchange.
 
 ## Features
 
@@ -13,7 +13,7 @@ A Node.js project for testing the OrangeHRM OAuth 2.0 flow including authorizati
 ## Prerequisites
 
 - Node.js 14+ 
-- OrangeHRM instance with OAuth 2.0 configured
+- HRM instance with OAuth 2.0 configured
 - OAuth credentials (Client ID, Client Secret)
 
 ## Setup
@@ -28,11 +28,11 @@ A Node.js project for testing the OrangeHRM OAuth 2.0 flow including authorizati
    cp .env.example .env
    ```
    
-   Edit `.env` and add your OrangeHRM OAuth credentials:
+   Edit `.env` and add your HRM OAuth credentials:
    ```
-   ORANGEHRM_BASE_URL=https://your-instance.orangehrm.com
-   ORANGEHRM_CLIENT_ID=your_client_id
-   ORANGEHRM_CLIENT_SECRET=your_client_secret
+   HRM_BASE_URL=https://your-instance.orangehrm.com
+   HRM_CLIENT_ID=your_client_id
+   HRM_CLIENT_SECRET=your_client_secret
    REDIRECT_URI=http://localhost:3000/callback
    PORT=3000
    ```
@@ -62,9 +62,9 @@ This will generate an authorization URL. Copy it to your browser, authorize, get
 ### Option 3: Programmatic Usage
 
 ```javascript
-const OrangeHRMOAuth = require('./oauth');
+const HRMOAuth = require('./oauth');
 
-const oauth = new OrangeHRMOAuth();
+const oauth = new HRMOAuth();
 
 // Generate authorization URL
 const authUrl = oauth.getAuthorizationUrl();
@@ -127,10 +127,10 @@ Response:
 
 ### "Invalid client_id" Error
 - Verify Client ID in `.env` is correct
-- Check OrangeHRM OAuth application settings
+- Check HRM OAuth application settings
 
 ### "Invalid redirect_uri" Error
-- Ensure `REDIRECT_URI` matches the registered URI in OrangeHRM
+- Ensure `REDIRECT_URI` matches the registered URI in HRM
 - Common: `http://localhost:3000/callback`
 
 ### "Unauthorized client" Error
@@ -138,12 +138,12 @@ Response:
 - Verify credentials have proper OAuth permissions
 
 ### Connection Refused
-- Verify OrangeHRM instance URL is correct
-- Check network connectivity to OrangeHRM
+- Verify HRM instance URL is correct
+- Check network connectivity to HRM
 
 ## Next Steps
 
-1. Configure with your OrangeHRM credentials
+1. Configure with your HRM credentials
 2. Run `npm start` and test the OAuth flow
 3. Once working, integrate into your application using the `oauth.js` class
 

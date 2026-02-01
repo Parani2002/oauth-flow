@@ -1,17 +1,17 @@
 /**
- * Test script for OrangeHRM OAuth flow
+ * Test script for HRM OAuth flow
  * Run this to manually test authorization URL generation and token exchange
  */
 
 require('dotenv').config();
-const OrangeHRMOAuth = require('./oauth');
+const HRMOAuth = require('./oauth');
 
 async function runTests() {
   console.log('\n╔════════════════════════════════════════╗');
-  console.log('║  OrangeHRM OAuth Flow Test             ║');
+  console.log('║  HRM OAuth Flow Test                   ║');
   console.log('╚════════════════════════════════════════╝\n');
 
-  const oauth = new OrangeHRMOAuth();
+  const oauth = new HRMOAuth();
 
   // Test 1: Generate Authorization URL
   console.log('TEST 1: Generate Authorization URL');

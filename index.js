@@ -1,9 +1,9 @@
 require('dotenv').config();
 const express = require('express');
-const OrangeHRMOAuth = require('./oauth');
+const HRMOAuth = require('./oauth');
 
 const app = express();
-const oauth = new OrangeHRMOAuth();
+const oauth = new HRMOAuth();
 const port = process.env.PORT || 3000;
 
 // Middleware
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>OrangeHRM OAuth Flow Test</title>
+      <title>HRM OAuth Flow Test</title>
       <style>
         body { font-family: Arial, sans-serif; margin: 40px; }
         .container { max-width: 600px; margin: 0 auto; }
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <div class="container">
-        <h1>OrangeHRM OAuth Flow Test</h1>
+        <h1>HRM OAuth Flow Test</h1>
         
         <div class="section">
           <h2>Step 1: Generate Authorization URL</h2>
@@ -55,8 +55,8 @@ app.get('/', (req, res) => {
 
         <div class="section">
           <h2>Configuration</h2>
-          <p>Base URL: <code>${process.env.ORANGEHRM_BASE_URL}</code></p>
-          <p>Client ID: <code>${process.env.ORANGEHRM_CLIENT_ID}</code></p>
+          <p>Base URL: <code>${process.env.HRM_BASE_URL}</code></p>
+          <p>Client ID: <code>${process.env.HRM_CLIENT_ID}</code></p>
           <p>Redirect URI: <code>${process.env.REDIRECT_URI}</code></p>
         </div>
       </div>
@@ -159,12 +159,12 @@ app.get('/callback', async (req, res) => {
 // Start server
 app.listen(port, () => {
   console.log(`\n╔════════════════════════════════════════╗`);
-  console.log(`║  OrangeHRM OAuth Flow Test Server      ║`);
+  console.log(`║  HRM OAuth Flow Test Server            ║`);
   console.log(`╚════════════════════════════════════════╝`);
   console.log(`\nServer running at: http://localhost:${port}`);
   console.log(`\nConfiguration:`);
-  console.log(`  Base URL: ${process.env.ORANGEHRM_BASE_URL}`);
-  console.log(`  Client ID: ${process.env.ORANGEHRM_CLIENT_ID}`);
+  console.log(`  Base URL: ${process.env.HRM_BASE_URL}`);
+  console.log(`  Client ID: ${process.env.HRM_CLIENT_ID}`);
   console.log(`  Redirect URI: ${process.env.REDIRECT_URI}`);
   console.log(`\nOpen http://localhost:${port} in your browser to start testing.\n`);
 });

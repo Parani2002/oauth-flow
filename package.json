@@ -1,14 +1,14 @@
 {
-  "name": "orangehrm-oauth-flow",
+  "name": "hrm-oauth-flow",
   "version": "1.0.0",
-  "description": "OrangeHRM OAuth Flow - Authorization URL and Token Exchange",
+  "description": "HRM OAuth Flow - Authorization URL and Token Exchange",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "node test.js"
   },
   "keywords": [
-    "orangehrm",
+    "hrm",
     "oauth",
     "authorization",
     "token"
